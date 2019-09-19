@@ -1,0 +1,14 @@
+package lab05;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		BinarySearchSet binarySet = new BinarySearchSet();
+		System.out.println(binarySet.isEmpty());
+		System.out.println(binarySet.size());
+		binarySet.grow();
+		System.out.println(binarySet.toString());
+		System.out.print(binarySet.insert(13.0));
+		System.out.print(binarySet.insert(14.0));
+	}
+}

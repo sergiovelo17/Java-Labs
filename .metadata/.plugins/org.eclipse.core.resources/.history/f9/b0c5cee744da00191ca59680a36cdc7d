@@ -1,0 +1,85 @@
+package lab05;
+
+public class BinarySearchSet {
+	/** represent the simple array that holds the list values */
+	public double[] storage;
+	/** holds the length of the storage array */
+	private int capacity;
+	/** holds the number of elements in the list */
+	private int size;
+
+	/** keep this TRUE for lab **/
+	public boolean labFind = true;
+
+	/** default constructor */
+	public BinarySearchSet(){
+		// TODO
+	}
+
+	public BinarySearchSet(double[] input){
+		// TODO (for assignment, not lab)
+	}
+
+	public boolean isEmpty(){
+		// TODO
+		return false; //placeholder
+	}
+
+	public int size(){
+		// TODO
+		return 0; //placeholder
+	}
+
+	public void grow(){
+		// TODO
+	}
+
+	public String toString(){
+		// TODO
+		return null; // placeholder
+	}
+
+	public void clear() {
+		// TODO
+	}
+
+	public boolean insert(double newVal){
+		// TODO
+		return false;
+	}
+
+	public boolean remove(double element){
+		// TODO
+		return false; // placeholder
+	}
+
+
+	private int sequentialFind(double target) {
+		// TODO
+		return 0; //placeholder
+	}
+
+	private int binaryFind(double target) {
+		// TODO
+		return 0; // placeholder
+	}
+
+	public int findIndex(double target) {
+		if (labFind) {
+			return sequentialFind(target);
+		} else {
+			return binaryFind(target);
+		}
+	}
+
+	public boolean containsAll(double[] elements){
+		// TODO
+		return false; // placeholder
+	}
+
+	public boolean contains(double element){
+		// TODO
+		return false; // placeholder
+	}
+
+}
