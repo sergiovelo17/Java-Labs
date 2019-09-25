@@ -41,10 +41,6 @@ public class Tester {
 		assignmentSet.remove(12.1);
 		assignmentSet.remove(89.1);
 		System.out.println(assignmentSet.toString());
-		double[] containsThese = {9.0,31.2,54.3};
-		double[] containsThose = {45.2,21.0,9.4};
-		System.out.println(assignmentSet.contains(1.0));
-		System.out.println(assignmentSet.containsAll(containsThese));
-		System.out.println(assignmentSet.containsAll(containsThose));
+		System.out.println(assignmentSet.contains(9.9));
 	}
 }

@@ -38,13 +38,6 @@ public class Tester {
 		double[] input = {12.0,45.2,12.1,9.4,21.0,12.0,15.6,1.0,31.1};
 		BinarySearchSet assignmentSet = new BinarySearchSet(input);
 		System.out.println(assignmentSet.toString());
-		assignmentSet.remove(12.1);
-		assignmentSet.remove(89.1);
-		System.out.println(assignmentSet.toString());
-		double[] containsThese = {9.0,31.2,54.3};
-		double[] containsThose = {45.2,21.0,9.4};
-		System.out.println(assignmentSet.contains(1.0));
-		System.out.println(assignmentSet.containsAll(containsThese));
-		System.out.println(assignmentSet.containsAll(containsThose));
+
 	}
 }

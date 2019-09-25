@@ -110,20 +110,8 @@ public class BinarySearchSet {
 	}
 
 	private int binaryFind(double target) {
-		int low = 0;
-		int high = this.size;
-		int mid = 0;
-		while(low <= high) {
-			mid = (low+high)/2;
-			if(this.storage[mid] == target) {
-				return mid;
-			}else if(target < this.storage[mid]) {
-				high = mid -1;
-			}else {
-				low = mid +1;
-			}
-		}
-		return -1; // placeholder
+		// TODO
+		return 0; // placeholder
 	}
 
 	public int findIndex(double target) {
@@ -135,19 +123,13 @@ public class BinarySearchSet {
 	}
 
 	public boolean containsAll(double[] elements){
-		for(int i = 0; i < elements.length; i++) {
-			if(this.binaryFind(elements[i]) < 0) {
-				return false;
-			}
-		}
-		return true; // placeholder
+		// TODO
+		return false; // placeholder
 	}
 
 	public boolean contains(double element){
-		if(this.binaryFind(element) >= 0) {
-			return true;
-		}
-		return false;
+		// TODO
+		return false; // placeholder
 	}
 
 }
