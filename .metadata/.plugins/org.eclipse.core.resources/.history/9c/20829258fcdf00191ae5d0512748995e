@@ -9,7 +9,7 @@ public class BinarySearchSet {
 	private int size;
 
 	/** keep this TRUE for lab **/
-	public boolean labFind = false;
+	public boolean labFind = true;
 
 	/** default constructor */
 	public BinarySearchSet(){
@@ -55,7 +55,7 @@ public class BinarySearchSet {
 		mySet += "\n";
 		mySet += "Size of list: " + size + "\n";
 		mySet += "Capacity of list: " + capacity + "\n";
-		return mySet;
+		return mySet; // placeholder
 	}
 
 	public void clear() {
@@ -94,7 +94,7 @@ public class BinarySearchSet {
 			}
 			return true;
 		}
-		return false;
+		return false; // placeholder
 	}
 
 
@@ -106,7 +106,7 @@ public class BinarySearchSet {
 				return (-i-1);
 			}
 		}
-		return 0;
+		return 0; //placeholder
 	}
 
 	private int binaryFind(double target) {
@@ -123,7 +123,7 @@ public class BinarySearchSet {
 				low = mid +1;
 			}
 		}
-		return -mid-1;
+		return -1; // placeholder
 	}
 
 	public int findIndex(double target) {
@@ -140,7 +140,7 @@ public class BinarySearchSet {
 				return false;
 			}
 		}
-		return true;
+		return true; // placeholder
 	}
 
 	public boolean contains(double element){
