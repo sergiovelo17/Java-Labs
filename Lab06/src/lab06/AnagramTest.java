@@ -2,10 +2,13 @@ package lab06;
 
 public class AnagramTest{
 	public static void main(String args[]) {
-		System.out.println(AnagramUtil.sort("hello"));
-		System.out.println(AnagramUtil.areAnagrams("hello", "HeoLL"));
-		System.out.println(AnagramUtil.areAnagrams("hello", "whatsup"));
+		System.out.println(AnagramUtil.sort("Velikopoljski"));
+		System.out.println(AnagramUtil.sort(""));
+		System.out.println(AnagramUtil.areAnagrams("Sergio", "Velikopoljski"));
+		System.out.println(AnagramUtil.areAnagrams("racecar", "carreca"));
 		String[] s1 = {"joy","ski","fed","cat"};
-		AnagramUtil.insertionSort(s1);
+		String[] s2 = {"racecar","wow","oww","carrace","raaccer","ccerraa"};
+		String[] s3 = AnagramUtil.getLargestAnagramGroup(s2);
+		AnagramUtil.stringTo(s3);
 	}
 }
