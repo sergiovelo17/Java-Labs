@@ -1,5 +1,6 @@
 package lab06;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class AnagramUtil{
@@ -70,5 +71,29 @@ public class AnagramUtil{
 			temp.clear();
 		}
 		return longestFinal;
+	}
+	
+	public static String[] readFile(String filename){
+		ArrayList<String> results = new ArrayList<String>();
+		try
+		{
+			BufferedReader input = new BufferedReader(new FileReader(filename));
+			while(input.ready())
+			{
+				results.add(input.readLine());
+			}
+			input.close();
+		}
+		catch(Exception e)
+		{e.printStackTrace();}
+		String[] retval = new String[1];
+		return results.toArray(retval);
+	}	
+
+	
+	public static String[] getLargestAnagramGroup(String filename) {
+		String[] words_copy = readFile(filename);
+		String[] s3 = getLargestAnagramGroup(words_copy);
+		return s3;
 	}
 }
