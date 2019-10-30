@@ -54,9 +54,9 @@ public class AnagramUtil{
 		ArrayList<String> longest = new ArrayList<String>();
         String[] longestFinal = {}; 
 
-		AnagramUtil.stringTo(inputList);
+//		AnagramUtil.stringTo(inputList);
 		AnagramUtil.insertionSort(inputList);
-		AnagramUtil.stringTo(inputList);
+//		AnagramUtil.stringTo(inputList);
 	
 		for(int i = 0; i < inputList.length; i++) {
 			temp.add(inputList[i]);
