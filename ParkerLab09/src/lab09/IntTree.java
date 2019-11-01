@@ -99,11 +99,30 @@ public class IntTree {
 	// empty string. Your method should return an empty string if it is passed a value for a level that 
 	// is less than 1. See the instruction for example output.
 	public String getLevel(int level){
-		// *FILL IN - DO NOT RETURN NULL
-		return null;
+		if(level < 1) {
+			return "";
+		}
+		IntTreeNode current = overallRoot;
+		return getLevelRecursive(current, level,1);
 	}
 	
-	
+	public String getLevelRecursive(IntTreeNode currentNode, int desiredLevel, int currLevel) {
+		
+		String level = "";
+		if(currentNode != null) {
+		if(currLevel < desiredLevel) {
+			if(currentNode.left != null) {
+				level += getLevelRecursive(currentNode.left,desiredLevel, currLevel+1);
+			}
+			if(currentNode.right != null) {
+				level += getLevelRecursive(currentNode.right,desiredLevel, currLevel+1);
+			}
+		}else {
+			level += currentNode.data + "\n";
+		}
+	}
+		return level;
+	}
 	// Write a method called countEmpty that returns the number of empty branches in a tree. An empty tree is 
 	// considered to have one empty branch (the tree itself). For nonempty trees, your methods should count the 
 	// total number of empty branches among the nodes of the tree. A leaf node has two empty branches, a node 
@@ -114,23 +133,24 @@ public class IntTree {
 		if(current == null) {
 			return 1;
 		}
-		return countEmptyRecursive(current,0);
+		return countEmptyRecursive(current);
 	}
 	
-	public int countEmptyRecursive(IntTreeNode currentNode, int currentTotal) {
+	public int countEmptyRecursive(IntTreeNode currentNode) {
+		int totalEmpty = 0;
 		if(currentNode != null) {
 			if(currentNode.left == null) {
-				currentTotal++;
+				totalEmpty++;
 			}else {
-				return countEmptyRecursive(currentNode.left,currentTotal);
+				totalEmpty += countEmptyRecursive(currentNode.left);
 			}
 			if(currentNode.right == null) {
-				currentTotal++;
+				totalEmpty++;
 			}else {
-				return countEmptyRecursive(currentNode.right,currentTotal);	
+				totalEmpty += countEmptyRecursive(currentNode.right);	
 			}
 		}
-			return currentTotal;			
+			return totalEmpty;			
 		
 	}
 	
@@ -140,8 +160,29 @@ public class IntTree {
 	// representation of the left subtree, and then a string representation of the right subtree. 
 	// See the instruction for example output.
 	public String toString(){
-		// *FILL IN - DO NOT RETURN NULL
-		return null;
+		return toStringRecursive(overallRoot);
+	}
+	
+	public String toStringRecursive(IntTreeNode current) {
+		String theInfo = "";
+		if(current != null) {
+		theInfo += "(" + current.data + ", "; 
+		if(current.left != null && (current.left.right != null || current.left.left != null)) {
+			theInfo += toStringRecursive(current.left);
+		}else if(current.left != null){
+			theInfo += current.left.data + ", ";
+		}else {
+			theInfo += "empty, ";
+		}
+		if(current.right != null && (current.right.right != null || current.right.left != null)) {
+			theInfo += toStringRecursive(current.right) + ")";
+		}else if(current.right != null){ 
+			theInfo += current.right.data + "), ";
+		}else{
+			theInfo += "empty)";
+		}
+		}
+		return theInfo;
 	}
 	
 	// Write a method called makePerfect that adds nodes until the binary tree is a perfect tree. A perfect 
@@ -150,8 +191,32 @@ public class IntTree {
 	// perfect tree's shape is triangular and every branch node has exactly two children, and all of the 
 	// leaves are at the same level. Each new node you add to the tree should store the value 0. 
 	public void makePerfect(){
-		// *FILL IN
+		IntTreeNode current = overallRoot;
+		int height = getHeight(current);
+		System.out.println(height);
+		makePerfRec(overallRoot, 0, height);
+	}
+	public int getHeight(IntTreeNode current) {
+		if(current == null) {
+			return 0;
+		}
+		int lh = getHeight(current.left);
+		int rh = getHeight(current.right);
+		
+		return 1 + Math.max(lh,rh);
 	}
 	
+	public void makePerfRec(IntTreeNode current, int currHeight, int treeHeight) {
+		if(currHeight+1 < treeHeight) {
+			if(current.left == null) {
+				current.left = new IntTreeNode(0);
+			}
+			makePerfRec(current.left,currHeight+1,treeHeight);
+			if(current.right == null) {
+				current.right = new IntTreeNode(0);
+			}
+			makePerfRec(current.right,currHeight+1,treeHeight);
+		}
+	}
 	
 }

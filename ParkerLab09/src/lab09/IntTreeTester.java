@@ -32,11 +32,10 @@ public class IntTreeTester {
 		int n2 = tree2.countEmpty();
 		if (n2 != 3)
 			System.err.println("TEST FAILED: countEmpty() with tree2");
-		System.out.println(n1 + " " + n2);
 		int n3 = tree3.countEmpty();
 		if (n3 != 4)
 			System.err.println("TEST FAILED: countEmpty() with tree3");		
-		/*
+	
 		int n4 = tree4.countEmpty();
 		if (n4 != 5)
 			System.err.println("TEST FAILED: countEmpty() with tree4");				
@@ -62,7 +61,6 @@ public class IntTreeTester {
 		
 		if (!tree_ref2.getLevel(2).equals("8\n1\n"))
 			System.err.println("TEST FAILED: getLevel() with tree_ref2");		
-
 		if (!tree_ref2.getLevel(3).equals("0\n7\n6\n"))
 			System.err.println("TEST FAILED: getLevel() with tree_ref2");
 		
@@ -71,9 +69,9 @@ public class IntTreeTester {
 		
 		if (!tree_ref2.getLevel(5).equals(""))
 			System.err.println("TEST FAILED: getLevel() with tree_ref2");
-         
+        
          System.out.println("Testing done!!!");
-		*/		
+			
 		
 		
 		// ********************* TESTS FOR ASSIGNMENT ****************************//
@@ -84,24 +82,26 @@ public class IntTreeTester {
 		
 		if (!tree2.toString().equals("(1, 2, empty)"))
 			System.err.println("TEST FAILED: toString() with tree2");
+		System.out.println(tree2.toString());
 		
 		if (!tree3.toString().equals("(1, 2, 3)"))
 			System.err.println("TEST FAILED: toString() with tree3");
 		
 		if (!tree4.toString().equals("(1, (2, 4, empty), 3)"))
 			System.err.println("TEST FAILED: toString() with tree4");
-		
+		System.out.println(tree6.toString());
+		tree6.printSideways();
 		if (!tree6.toString().equals("(1, (2, 4, 5), (3, 6, empty))"))
 			System.err.println("TEST FAILED: toString() with tree6");
 		
 		if (!tree_ref2.toString().equals("(2, (8, 0, empty), (1, (7, 4, empty), (6, empty, 9)))"))
 			System.err.println("TEST FAILED: toString() with tree_ref2");
-			
+		System.out.println(tree_ref2.toString());
 		// *** makePerfect() tests
 		empty_tree.makePerfect();
 		if (!empty_tree.getInorder().equals(""))
 			System.err.println("TEST FAILED: makePerfect() with empty tree");
-
+*/
 		tree1.makePerfect();
 		if (!tree1.getInorder().equals(" 1 "))
 			System.err.println("TEST FAILED: makePerfect() with tree1");
@@ -109,7 +109,7 @@ public class IntTreeTester {
 		tree2.makePerfect();
 		if (!tree2.getInorder().equals(" 2  1  0 "))
 			System.err.println("TEST FAILED: makePerfect() with tree2");
-
+		System.out.println(tree2.getInorder());
 		tree3.makePerfect();
 		if (!tree3.getInorder().equals(" 2  1  3 "))
 			System.err.println("TEST FAILED: makePerfect() with tree3");		
@@ -131,7 +131,6 @@ public class IntTreeTester {
 			System.err.println("TEST FAILED: makePerfect() with tree_ref2");
          
          System.out.println("Testing done!!!");
-		*/
 		
 
 	}
