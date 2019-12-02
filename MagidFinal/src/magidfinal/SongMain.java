@@ -5,7 +5,7 @@ public class SongMain {
 	public static void main(String[] arg) {
 		SongCollection myCollection = new SongCollection();
 		Scanner keyboard = new Scanner(System.in);
-		int option = -1;
+		int options = -1;
 		int start = -1;
 		int end = -1;
 		String title = "";
@@ -13,7 +13,7 @@ public class SongMain {
 		String key = "";
 		int pos = -1;
 		String fileName = "";
-		while(option != 0) {
+		while(options != 0) {
 			System.out.println("========Select action========\n" + 
 					"0. Quit\n" + 
 					"1. Get collection size\n" + 
@@ -25,8 +25,8 @@ public class SongMain {
 					"7. Remove one song\n" + 
 					"8. Show");
 			System.out.print("Enter Choice: ");
-			option = Integer.parseInt(keyboard.nextLine());
-			switch(option) {
+			options = Integer.parseInt(keyboard.nextLine());
+			switch(options) {
 			case 0:
 			System.out.println("Thank you for using this program! Bye!");
 			break;
